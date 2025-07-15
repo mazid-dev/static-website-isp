@@ -1,0 +1,326 @@
+/* style.css */
+
+/* বেসিক বডি স্টাইল */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #eef2f5; /* হালকা ধূসর ব্যাকগ্রাউন্ড */
+    line-height: 1.6;
+    overflow-x: hidden; /* অনুভূমিক স্ক্রলিং প্রতিরোধ */
+}
+
+/* সেকশনগুলির জন্য সামঞ্জস্যপূর্ণ প্যাডিং */
+.section-padding {
+    padding: 4rem 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .section-padding {
+        padding: 6rem 3rem;
+    }
+}
+
+/* সেকশন হেডিং স্টাইল */
+.section-heading {
+    font-size: 2.5rem; /* text-4xl */
+    font-weight: 800; /* font-extrabold */
+    color: #1e40af; /* Tailwind blue-800 */
+    margin-bottom: 3rem; /* mb-12 */
+    position: relative;
+    display: inline-block;
+}
+
+.section-heading::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -10px;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: #2563eb; /* Tailwind blue-600 */
+    border-radius: 2px;
+}
+
+/* নেভিগেশন লিঙ্ক স্টাইল */
+.nav-link {
+    @apply hover:text-blue-200 transition duration-300 text-lg font-medium rounded-md py-2 px-3 hover:bg-white hover:text-blue-700;
+}
+
+
+/* কাস্টম বাটন স্টাইল */
+.btn-primary {
+    background-color: #2563eb; /* Tailwind blue-600 */
+    color: #ffffff; /* White text */
+    font-weight: bold;
+    padding: 0.75rem 2rem; /* py-3 px-8 */
+    border-radius: 9999px; /* rounded-full */
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-lg */
+    transition: all 0.3s ease-in-out; /* transition duration-300 */
+    transform: scale(1); /* Initial scale for hover effect */
+    outline: none; /* focus:outline-none */
+}
+
+.btn-primary:hover {
+    background-color: #1d4ed8; /* Tailwind blue-700 */
+    transform: scale(1.05); /* hover:scale-105 */
+}
+
+.btn-primary:focus {
+    box-shadow: 0 0 0 4px rgba(96, 165, 250, 0.5); /* focus:ring-4 focus:ring-blue-300 */
+}
+
+/* সেকেন্ডারি বাটন স্টাইল (প্যাকেজ কার্ডের জন্য) */
+.btn-secondary {
+    background-color: #dbeafe; /* Tailwind blue-100 */
+    color: #1e40af; /* Tailwind blue-800 */
+    font-weight: bold;
+    padding: 0.75rem 2rem;
+    border-radius: 9999px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease-in-out;
+    transform: scale(1);
+    outline: none;
+    display: inline-block; /* Ensure button takes its own space */
+}
+
+.btn-secondary:hover {
+    background-color: #bfdbfe; /* Tailwind blue-200 */
+    transform: scale(1.05);
+}
+
+.btn-secondary-featured {
+    background-color: #ffffff; /* White background */
+    color: #2563eb; /* Tailwind blue-600 */
+    font-weight: bold;
+    padding: 0.75rem 2rem;
+    border-radius: 9999px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease-in-out;
+    transform: scale(1);
+    outline: none;
+    display: inline-block; /* Ensure button takes its own space */
+}
+
+.btn-secondary-featured:hover {
+    background-color: #f0f4f8; /* Lighter white */
+    transform: scale(1.05);
+}
+
+
+/* সার্ভিস কার্ডের জন্য কাস্টম স্টাইল */
+.service-card {
+    background-color: #ffffff; /* White background */
+    padding: 2rem; /* p-8 */
+    border-radius: 0.75rem; /* rounded-xl */
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-lg */
+    transition: all 0.3s ease-in-out; /* transition duration-300 */
+    transform: translateY(0); /* Initial position for hover effect */
+    border: 1px solid #bfdbfe; /* Tailwind blue-100 */
+    display: flex; /* Flexbox for internal alignment */
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.service-card:hover {
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); /* hover:shadow-2xl */
+    transform: translateY(-8px); /* hover:-translate-y-2 */
+}
+
+.service-card svg {
+    color: #2563eb; /* Tailwind blue-600 */
+    margin-bottom: 1.5rem; /* mb-6 */
+    margin-left: auto;
+    margin-right: auto;
+    width: 64px; /* SVG আইকনের আকার */
+    height: 64px;
+}
+
+.service-card h3 {
+    font-size: 1.5rem; /* text-2xl */
+    font-weight: 600; /* font-semibold */
+    color: #1e40af; /* Tailwind blue-800 */
+    margin-bottom: 1rem; /* mb-4 */
+}
+
+.service-card ul {
+    width: 100%; /* Ensure ul takes full width for text-left */
+}
+
+.service-card ul li {
+    display: flex;
+    align-items: center;
+    color: #4b5563; /* Tailwind gray-700 */
+    margin-bottom: 0.5rem; /* mb-2 */
+    text-align: left; /* Align text to left */
+}
+
+.service-card ul li span {
+    color: #3b82f6; /* Tailwind blue-500 */
+    font-weight: bold;
+    margin-right: 0.5rem; /* mr-2 */
+    font-size: 1.25rem; /* text-xl */
+}
+
+/* প্যাকেজ কার্ডের জন্য কাস্টম স্টাইল */
+.package-card {
+    background-color: #f8fafc; /* Tailwind gray-50 */
+    padding: 2.5rem;
+    border-radius: 1rem; /* rounded-xl */
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease-in-out;
+    transform: scale(1);
+    border: 1px solid #e2e8f0; /* Tailwind gray-200 */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+
+.package-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.package-card h3 {
+    margin-bottom: 1rem;
+}
+
+.package-card p {
+    margin-bottom: 1.5rem;
+}
+
+.package-card ul {
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+.package-card ul li {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center align list items */
+    margin-bottom: 0.75rem;
+    font-size: 1.125rem; /* text-lg */
+}
+
+.package-check {
+    color: #22c55e; /* Tailwind green-500 */
+    font-weight: bold;
+    margin-right: 0.5rem;
+    font-size: 1.5rem; /* text-2xl */
+}
+
+/* ফিচারড প্যাকেজ কার্ডের জন্য বিশেষ স্টাইল */
+.featured-package {
+    background-color: #2563eb; /* Tailwind blue-600 */
+    color: #ffffff;
+    border-color: #1d4ed8; /* Darker blue border */
+    transform: scale(1.03); /* Slightly larger */
+}
+
+.featured-package:hover {
+    transform: translateY(-12px) scale(1.05); /* More prominent hover */
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.featured-package h3 {
+    color: #ffffff;
+}
+
+.featured-package p {
+    color: #ffffff;
+}
+
+.featured-package ul li {
+    color: #e0f2fe; /* Tailwind blue-100 */
+}
+
+.featured-package .package-check {
+    color: #34d399; /* Tailwind green-300 for contrast */
+}
+
+/* হিরো সেকশনের জন্য নতুন স্টাইল */
+.hero-section {
+    background: linear-gradient(to bottom right, #e0f2fe, #c7d2fe); /* Light blue to indigo gradient */
+    padding: 6rem 1.5rem;
+    border-radius: 0 0 2rem 2rem; /* Rounded bottom corners */
+    box-shadow: 0 15px 30px -5px rgba(0, 0, 0, 0.1), 0 8px 16px -6px rgba(0, 0, 0, 0.05);
+    margin-bottom: 2rem;
+    position: relative;
+    overflow: hidden; /* For background patterns */
+}
+
+/* Subtle background pattern for hero section */
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(#dbeafe 1px, transparent 1px);
+    background-size: 20px 20px;
+    opacity: 0.3;
+    z-index: 0;
+}
+
+.hero-section > .container {
+    position: relative;
+    z-index: 1; /* Ensure content is above the pattern */
+}
+
+/* ফ্রি কানেকশন ব্যানার স্টাইল */
+.free-connection-banner {
+    background-color: #dcfce7; /* Light green background */
+    color: #16a34a; /* Dark green text */
+    padding: 1.5rem 2rem;
+    border-radius: 0.75rem;
+    margin-bottom: 2.5rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    animation: pulse 2s infinite; /* Add a subtle pulse animation */
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+    100% { transform: scale(1); }
+}
+
+
+/* অ্যানিমেশন */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in-down {
+    animation: fadeInDown 1s ease-out forwards;
+}
+
+.animate-fade-in-up {
+    animation: fadeInUp 1s ease-out forwards;
+    animation-delay: 0.3s; /* একটু দেরিতে শুরু হবে */
+}
